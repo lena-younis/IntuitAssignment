@@ -49,6 +49,7 @@ public class CreatePayment {
         payment.setPaymentMethod(getPaymentMethodService.getPaymentMethod(request.getPaymentMethodId()));
         payment.setPayee(getPayeeService.getPayee(request.getPayeeId()));
         payment.setCurr(Currency.valueOf(request.getCurrency()));
+        payment.setStatus("Not Processed");
 
         logger.info("producing payment notification on kafka topic for risk analysis");
         paymentNotificationProducer.produce(payment);

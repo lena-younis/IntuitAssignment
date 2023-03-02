@@ -1,15 +1,16 @@
 package com.Intuit.models;
 
 import com.Intuit.models.enums.Currency;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.Serializable;
-
 public class PaymentDTO implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private String Status;
 
     private String risk;
+
     private PayeeDTO payee;
     private double sum;
     private Currency curr;
