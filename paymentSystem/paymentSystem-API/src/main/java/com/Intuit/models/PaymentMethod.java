@@ -5,7 +5,7 @@ import com.Intuit.models.enums.PaymentMethodType;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class PaymentMethodDTO implements Serializable {
+public class PaymentMethod implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -18,7 +18,7 @@ public class PaymentMethodDTO implements Serializable {
 
     private String ID;
 
-    public PaymentMethodDTO(String firstName, String lastName, String last4Digits, String bank, String account, PaymentMethodType type, String ID) {
+    public PaymentMethod(String firstName, String lastName, String last4Digits, String bank, String account, PaymentMethodType type, String ID) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.last4Digits = last4Digits;
@@ -32,7 +32,7 @@ public class PaymentMethodDTO implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        PaymentMethodDTO that = (PaymentMethodDTO) o;
+        PaymentMethod that = (PaymentMethod) o;
         return Objects.equals(firstName, that.firstName) && Objects.equals(lastName, that.lastName) && Objects.equals(last4Digits, that.last4Digits) && Objects.equals(bank, that.bank) && Objects.equals(account, that.account) && type == that.type && Objects.equals(ID, that.ID);
     }
 

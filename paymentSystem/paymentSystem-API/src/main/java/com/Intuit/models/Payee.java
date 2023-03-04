@@ -3,7 +3,7 @@ package com.Intuit.models;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class PayeeDTO implements Serializable {
+public class Payee implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -15,7 +15,7 @@ public class PayeeDTO implements Serializable {
     private String branch;
     private String account;
 
-    public PayeeDTO(String firstName, String lastName, String address, String bankName, String branch, String account , String ID) {
+    public Payee(String firstName, String lastName, String address, String bankName, String branch, String account , String ID) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
@@ -29,7 +29,7 @@ public class PayeeDTO implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        PayeeDTO payeeDTO = (PayeeDTO) o;
+        Payee payeeDTO = (Payee) o;
         return Objects.equals(ID, payeeDTO.ID) && Objects.equals(firstName, payeeDTO.firstName) && Objects.equals(lastName, payeeDTO.lastName) && Objects.equals(address, payeeDTO.address) && Objects.equals(bankName, payeeDTO.bankName) && Objects.equals(branch, payeeDTO.branch) && Objects.equals(account, payeeDTO.account);
     }
 

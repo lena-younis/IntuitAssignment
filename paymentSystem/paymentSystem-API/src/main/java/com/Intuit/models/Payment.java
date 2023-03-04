@@ -4,25 +4,20 @@ import com.Intuit.models.enums.Currency;
 
 import java.io.Serializable;
 
-public class PaymentDTO implements Serializable {
+public class Payment implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    private String Status;
-
-    private String risk;
-    private PayeeDTO payee;
+    private Payee payee;
     private double sum;
     private Currency curr;
-    private PaymentMethodDTO paymentMethod;
+    private PaymentMethod paymentMethod;
 
-    public PaymentDTO() {
+    public Payment() {
     }
 
     @Override
     public String toString() {
         return "PaymentDTO{" +
-                "Status='" + Status + '\'' +
-                ", risk='" + risk + '\'' +
                 ", payee=" + payee +
                 ", sum=" + sum +
                 ", curr=" + curr +
@@ -30,27 +25,12 @@ public class PaymentDTO implements Serializable {
                 '}';
     }
 
-    public String getStatus() {
-        return Status;
-    }
 
-    public void setStatus(String status) {
-        Status = status;
-    }
-
-    public String getRisk() {
-        return risk;
-    }
-
-    public void setRisk(String risk) {
-        this.risk = risk;
-    }
-
-    public PayeeDTO getPayee() {
+    public Payee getPayee() {
         return payee;
     }
 
-    public void setPayee(PayeeDTO payee) {
+    public void setPayee(Payee payee) {
         this.payee = payee;
     }
 
@@ -70,11 +50,11 @@ public class PaymentDTO implements Serializable {
         this.curr = curr;
     }
 
-    public PaymentMethodDTO getPaymentMethod() {
+    public PaymentMethod getPaymentMethod() {
         return paymentMethod;
     }
 
-    public void setPaymentMethod(PaymentMethodDTO paymentMethod) {
+    public void setPaymentMethod(PaymentMethod paymentMethod) {
         this.paymentMethod = paymentMethod;
     }
 }
