@@ -8,9 +8,10 @@ import com.Intuit.models.enums.Currency;
 import com.Intuit.services.GetPayees;
 import com.Intuit.services.GetPaymentMethods;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
-
+@Component
 public class ValidationService {
 
     @Autowired
