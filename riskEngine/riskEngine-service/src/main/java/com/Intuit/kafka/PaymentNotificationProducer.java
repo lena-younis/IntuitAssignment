@@ -1,6 +1,6 @@
 package com.Intuit.kafka;
 
-import com.Intuit.models.PaymentDTO;
+import com.Intuit.models.Payment;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -18,17 +18,17 @@ public class PaymentNotificationProducer {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(PaymentNotificationProducer.class);
 
-    private KafkaTemplate<String, PaymentDTO> kafkaTemplate;
+    private KafkaTemplate<String, Payment> kafkaTemplate;
 
-    public PaymentNotificationProducer(KafkaTemplate<String, PaymentDTO> kafkaTemplate) {
+    public PaymentNotificationProducer(KafkaTemplate<String, Payment> kafkaTemplate) {
         this.kafkaTemplate = kafkaTemplate;
     }
 
-    public void produce(PaymentDTO data){
+    public void produce(Payment data){
 
         LOGGER.info(String.format("Message sent -> %s", data.toString()));
 
-        Message<PaymentDTO> message = MessageBuilder
+        Message<Payment> message = MessageBuilder
                 .withPayload(data)
                 .setHeader(KafkaHeaders.TOPIC, topicName)
                 .build();

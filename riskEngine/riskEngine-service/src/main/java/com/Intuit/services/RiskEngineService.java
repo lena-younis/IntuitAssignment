@@ -3,7 +3,7 @@ package com.Intuit.services;
 import com.Intuit.engine.RiskEngine;
 import com.Intuit.kafka.PaymentNotificationConsumer;
 import com.Intuit.kafka.PaymentNotificationProducer;
-import com.Intuit.models.PaymentDTO;
+import com.Intuit.models.Payment;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ public class RiskEngineService {
     private PaymentNotificationProducer producer;
     private static final Logger LOGGER = LoggerFactory.getLogger(PaymentNotificationConsumer.class);
 
-    public void processPayment(PaymentDTO payment){
+    public void processPayment(Payment payment){
 
         LOGGER.info("payment processing started");
         int risk = engine.calculateRisk();
